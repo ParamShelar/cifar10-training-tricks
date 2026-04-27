@@ -43,32 +43,6 @@ def train_one_epoch(model, train_loader, criterion, optimizer, device):
     return avg_loss, accuracy
 
 
-def evaluate(model, data_loader, criterion, device):
-    model.eval()
-
-    total_loss = 0.0
-    correct = 0
-    total = 0
-
-    with torch.no_grad():
-        for images, labels in tqdm(data_loader, desc="Evaluating", leave=False):
-            images = images.to(device)
-            labels = labels.to(device)
-
-            outputs = model(images)
-            loss = criterion(outputs, labels)
-
-            total_loss += loss.item() * images.size(0)
-
-            _, predicted = outputs.max(1)
-            correct += predicted.eq(labels).sum().item()
-            total += labels.size(0)
-
-    avg_loss = total_loss / total
-    accuracy = correct / total
-
-    return avg_loss, accuracy
-
 
 def load_config(config_path):
     with open(config_path, "r", encoding="utf-8") as f:
@@ -198,10 +172,10 @@ def run_training(config):
     print("\nFinal Results")
     print(f"Experiment: {config['experiment_name']}")
     print(f"Final train accuracy: {final_train_acc:.4f}")
-    print(f"Final test accuracy:  {final_test_acc:.4f}")
-    print(f"Final train loss:     {final_train_loss:.4f}")
-    print(f"Final test loss:      {final_test_loss:.4f}")
-    print(f"Training time:        {time_minutes:.2f} minutes")
+    print(f"Final test accuracy: {final_test_acc:.4f}")
+    print(f"Final train loss: {final_train_loss:.4f}")
+    print(f"Final test loss: {final_test_loss:.4f}")
+    print(f"Training time: {time_minutes:.2f} minutes")
 
     return row
 

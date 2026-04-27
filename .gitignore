@@ -9,8 +9,6 @@ data/
 *.pth
 *.ckpt
 
-results/plots/*.png
-results/confusion_matrices/*.png
 
 .ipynb_checkpoints/
 .DS_Store
