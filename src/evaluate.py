@@ -1,15 +1,6 @@
-import argparse
-import os
-import time
-import yaml
 import torch
-import torch.nn as nn
-import torch.optim as optim
 from tqdm import tqdm
 
-from model import SmallCNN
-from data import get_dataloaders
-from utils import set_seed, save_metrics, save_history
 
 def evaluate(model, data_loader, criterion, device):
     model.eval()

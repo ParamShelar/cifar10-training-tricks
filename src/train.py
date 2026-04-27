@@ -7,6 +7,7 @@ import torch.nn as nn
 import torch.optim as optim
 from tqdm import tqdm
 
+from evaluate import evaluate
 from model import SmallCNN
 from data import get_dataloaders
 from utils import set_seed, save_metrics, save_history
