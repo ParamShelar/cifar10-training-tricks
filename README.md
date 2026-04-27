@@ -178,12 +178,12 @@ The main results table will compare:
 
 | Experiment | Train Acc | Test Acc | Gap | Test Loss |
 |---|---:|---:|---:|---:|
-| Baseline | TBD | TBD | TBD | TBD |
-| Augmentation | TBD | TBD | TBD | TBD |
-| Batch Normalization | TBD | TBD | TBD | TBD |
-| Dropout | TBD | TBD | TBD | TBD |
-| Label Smoothing | TBD | TBD | TBD | TBD |
-| All Tricks | TBD | TBD | TBD | TBD |
+| Baseline | 98.61% | 72.77% | 25.84% | 2.286 |
+| Augmentation | 84.48% | 81.14% | 3.34% | 0.575 |
+| Batch Normalization | 98.79% | 77.40% | 21.39% | 1.432 |
+| Dropout | 92.73% | 76.33% | 16.40% | 1.321 |
+| Label Smoothing | 100.00% | 74.39% | 25.61% | 1.166 |
+| All Tricks | 74.92% | 81.96% | -7.04% | 0.969 |
 
 ## Planned Plots
 
