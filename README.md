@@ -102,6 +102,7 @@ cifar10-training-tricks/
 │   └── references.bib
 ├── src/
 │   ├── train.py
+│   ├── run_experiments.py
 │   ├── model.py
 │   ├── data.py
 │   ├── evaluate.py
@@ -115,6 +116,7 @@ cifar10-training-tricks/
 │   └── all_tricks.yaml
 ├── results/
 │   ├── metrics.csv
+│   ├── history/
 │   ├── plots/
 │   └── confusion_matrices/
 └── notebooks/
@@ -131,40 +133,31 @@ pip install -r requirements.txt
 
 ## How to Run
 
-Run the baseline experiment:
+Run one experiment:
 
 ```bash
 python src/train.py --config configs/baseline.yaml
 ```
 
-Run the data augmentation experiment:
+Run all experiments:
 
 ```bash
-python src/train.py --config configs/augmentation.yaml
+python src/run_experiments.py
 ```
 
-Run the batch normalization experiment:
+Quick debug run:
 
 ```bash
-python src/train.py --config configs/batchnorm.yaml
+python src/run_experiments.py --epochs 1
 ```
 
-Run the dropout experiment:
+Colab usage:
 
 ```bash
-python src/train.py --config configs/dropout.yaml
-```
-
-Run the label smoothing experiment:
-
-```bash
-python src/train.py --config configs/label_smoothing.yaml
-```
-
-Run the all-tricks experiment:
-
-```bash
-python src/train.py --config configs/all_tricks.yaml
+!git clone <repo-url>
+%cd cifar10-training-tricks
+!pip install -r requirements.txt
+!python src/run_experiments.py
 ```
 
 ## Results
@@ -173,6 +166,12 @@ Experiment results will be saved in:
 
 ```text
 results/metrics.csv
+```
+
+Per-epoch training curves will be saved in:
+
+```text
+results/history/{experiment}_seed{seed}.csv
 ```
 
 The main results table will compare:

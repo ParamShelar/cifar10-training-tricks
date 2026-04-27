@@ -1,0 +1,19 @@
+experiment_name: augmentation
+
+seed: 0
+epochs: 30
+batch_size: 128
+learning_rate: 0.001
+optimizer: Adam
+loss: CrossEntropyLoss
+
+use_augmentation: true
+use_batchnorm: false
+use_dropout: false
+use_label_smoothing: false
+
+dropout_p: 0.5
+label_smoothing: 0.0
+
+data_dir: data
+results_file: results/metrics.csv
