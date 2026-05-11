@@ -9,6 +9,23 @@ data/
 *.pth
 *.ckpt
 
+# Generated report figures and model outputs
+results/models/
+results/plots/
+results/**/*.png
+results/**/*.jpg
+results/**/*.jpeg
+results/**/*.svg
+results/**/*.pdf
+
+# Report source images; keep the final report PDF tracked
+report/**/*.png
+report/**/*.jpg
+report/**/*.jpeg
+report/**/*.svg
+report/**/*.pdf
+!report/CIFAR10_training_tricks_report.pdf
+
 
 .ipynb_checkpoints/
 .DS_Store
